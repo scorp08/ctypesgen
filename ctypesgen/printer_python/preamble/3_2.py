@@ -282,7 +282,7 @@ def ReturnString(obj, func=None, arguments=None):
 # Non-primitive return values wrapped with UNCHECKED won't be
 # typechecked, and will be converted to c_void_p.
 def UNCHECKED(type):
-    if (hasattr(type, "_type_") and isinstance(type._type_, bytes)
+    if (hasattr(type, "_type_") and isinstance(type._type_.encode(), bytes)
         and type._type_ != "P"):
         return type
     else:
